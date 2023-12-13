@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Train {
 	
 	@Id
-	private long trianId;
+	private String trianId;
 	private Integer trainNumber;
 	private String trainName;
 	private String source;

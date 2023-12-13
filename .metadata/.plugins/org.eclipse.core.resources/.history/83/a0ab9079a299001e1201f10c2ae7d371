@@ -1,0 +1,5 @@
+package com.praneeth.traindetailsservice.model;
+
+public class TrainSearchRequest {
+
+}

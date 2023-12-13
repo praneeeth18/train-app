@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.praneeth.traindetailsservice.model.Train;
+import com.praneeth.traindetailsservice.model.TrainSearchRequest;
 import com.praneeth.traindetailsservice.service.TrainService;
 
 @RestController
@@ -28,5 +29,10 @@ public class TrainController {
 	@GetMapping("/getAllTrains")
 	public ResponseEntity<List<Train>> getAllTrains() {
 		return trainService.getAllTrains();
+	}
+	
+	@PostMapping("/searchTrain")
+	public ResponseEntity<List<Train>> searchTrain(@RequestBody TrainSearchRequest request) {
+		return trainService.searchTrain(request);
 	}
 }
