@@ -1,0 +1,5 @@
+package com.praneeth.traindetailsservice.repository;
+
+public interface TrainRepository {
+
+}

@@ -1,0 +1,26 @@
+package com.praneeth.traindetailsservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.praneeth.traindetailsservice.model.Train;
+import com.praneeth.traindetailsservice.repository.TrainRepository;
+
+@Service
+public class TrainService {
+
+	@Autowired
+	TrainRepository trainRepository;
+	
+	public ResponseEntity<String> addTrain(Train train) {
+		try {
+			trainRepository.save(train);
+			return new ResponseEntity<>("Train added successfully!", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<>("Unsuccessfull!", HttpStatus.OK);
+	}
+}

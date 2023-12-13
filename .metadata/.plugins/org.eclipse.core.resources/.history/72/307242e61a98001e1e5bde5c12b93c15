@@ -1,0 +1,5 @@
+package com.praneeth.traindetailsservice.service;
+
+public class TrainService {
+
+}

@@ -1,0 +1,17 @@
+package com.praneeth.traindetailsservice.repository;
+
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.praneeth.traindetailsservice.model.Train;
+
+@Repository
+public interface TrainRepository extends MongoRepository<Train, Integer> {
+
+	@Query("{ 'source': ?0, 'destination': ?1, 'classes': ?2, 'quota': ?3, 'date': ?4 }")
+    Optional<List<Train>> findTrainsByCriteria(String source, String destination, String classes, String quota, String date);
+	
+}
